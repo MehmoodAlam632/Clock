@@ -15,6 +15,15 @@ body{
 .container{
     position: relative;
 }
+.nameContainer {
+    position: absolute;
+    width: fit-content;
+    top: 90px;
+    right: 105px;
+}
+.name {
+
+}
 .clock{
     width: 300px;
     height: 300px;
@@ -22,10 +31,42 @@ body{
     border-radius: 50%;
     border: 2px solid rgba(255, 255, 255, 0.25);
     box-shadow: 0px 0px 30px rgba(0,0,0,0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .clock span {
     position: absolute;
     transform: rotate(calc(30deg * var(--i)));
     inset: 15px;
     text-align: center;
+}
+.clock span b {
+    transform: rotate(calc(-30deg * var(--i)));
+    display: inline-block;
+    /* background-color: aqua; */
+    width: fit-content;
+    font-size: 20px;
+}
+.clock::before{
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #fff;
+    z-index: 99;
+}
+.hand {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.hand i {
+    position: absolute;
+    background-color: var(--clr);
+    width: var(--w);
+    height: var(--h);
+    border-radius: 8px;
 }
